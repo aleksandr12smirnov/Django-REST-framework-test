@@ -6,7 +6,7 @@
 $ mkdir rest-devcode
 $ cd rest-devcode
 $ virtualenv . -p python3
-$ git clone ''
+$ git clone 'https://github.com/DevcodeInc/API-REST-DJango-Rest-Framework/tree/0.5.git src'
 ```
 
 #### Apply requirements

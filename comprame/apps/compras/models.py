@@ -1,5 +1,4 @@
 from django.db import models
-
 from comprame.apps.compras.mixins import TimeStampedModel
 
 

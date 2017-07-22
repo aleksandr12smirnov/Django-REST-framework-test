@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'comprame.wsgi.application'
 
 DATABASES = {
     'default': {
-            'ENGINE': 'tenant_schemas.postgresql_backend',
+            'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'comprame_db',
             'USER': 'ever',
             'PASSWORD': 'secreto',

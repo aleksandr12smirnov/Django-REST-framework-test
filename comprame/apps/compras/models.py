@@ -4,7 +4,7 @@ from comprame.apps.compras.mixins import TimeStampedModel
 
 class Client(TimeStampedModel):
     email = models.EmailField()
-    details = models.TextField()
+    details = models.TextField(blank=True, null=True)
 
 
 class Product(TimeStampedModel):

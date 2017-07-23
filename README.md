@@ -1,6 +1,6 @@
 ## API REST DJango Rest Framework
 
-#### Create project
+#### Crear proyecto
 
 ```sh
 $ mkdir rest-devcode
@@ -10,13 +10,13 @@ $ git clone 'https://github.com/DevcodeInc/API-REST-DJango-Rest-Framework.git sr
 $ git checkout 0.5
 ```
 
-#### Apply requirements
+#### Aplicar requerimientos
 ```sh
 $ source bin/activate
 $ (rest-devcode) pip install -r requirements.txt
 ```
 
-#### Configure database
+#### Configurar base de datos
 ```sh
 DATABASES = {
     'default': {
@@ -31,7 +31,7 @@ DATABASES = {
 ```
 
 
-#### Apply Migrations
+#### Aplicar migraciones
 
 ```sh
 $ (rest-devcode) cd src/
@@ -39,8 +39,22 @@ $ (rest-devcode) python manage.py makemigrations
 $ (rest-devcode) python manage.py migrate
 ```
 
+#### llenado de data
+copiar sql y aplicar en la base de datos en el siguiente orden
+```sh
+1. compras_client.sql
+2. compras_product.sql
+3. compras_purchase.sql
+4. compras_purchaseitem.sql
+```
 
-#### Run
+#### Sincronizar base de datos
+Genera el código sql para sincronizar la base de datos
+```sh
+$ (rest-devcode) $ python manage.py sqlsequencereset compras 
+```
+
+#### Iniciar
 ```sh
 $ (rest-devcode) python manage.py runserver
 ```

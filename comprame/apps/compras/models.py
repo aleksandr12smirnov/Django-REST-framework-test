@@ -1,4 +1,8 @@
 from django.db import models
+from django.db.models.aggregates import Sum
+from django.db.models.expressions import ExpressionWrapper, F
+from django.db.models.fields import FloatField
+
 from comprame.apps.compras.mixins import TimeStampedModel
 
 
@@ -20,6 +24,13 @@ class Purchase(TimeStampedModel):
     address = models.CharField(max_length=100)
     state = models.CharField(max_length=15)
     zip_code = models.CharField(max_length=15)
+
+    def get_total(self):
+        total = PurchaseItem.objects.filter(purchase=self) \
+            .annotate(
+            subtotal=ExpressionWrapper(
+                Sum(F('price') * F('quantity')), output_field=FloatField())).aggregate(total=Sum('subtotal'))
+        return total['total']
 
 
 class PurchaseItem(TimeStampedModel):

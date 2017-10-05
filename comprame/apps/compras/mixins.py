@@ -45,3 +45,5 @@ class ModelViewSetMixin(viewsets.ModelViewSet):
             "result": "Ok"
         }
         return Response(response, status=status.HTTP_204_NO_CONTENT)
+
+
